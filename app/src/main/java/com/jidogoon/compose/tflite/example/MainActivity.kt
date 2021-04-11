@@ -19,16 +19,13 @@ class MainActivity : ComponentActivity() {
     private lateinit var modelLoader: ModelLoader
     private lateinit var recommendationClient: RecommendationClient
 
-    override fun onStart() {
-        super.onStart()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         modelLoader = ModelLoader(assets)
         recommendationClient = RecommendationClient(this, modelLoader.config).apply {
             load()
         }
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
                 Scaffold(modifier = Modifier

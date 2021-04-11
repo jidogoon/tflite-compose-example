@@ -6,5 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "ComposeExample"
+rootProject.name = "TFLite Compose Example"
 include(":app")
